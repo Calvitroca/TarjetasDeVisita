@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjetas de Visitas</title>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .hidden {
+      display: none;
+    }
+    .alert {
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid transparent;
+      border-radius: 5px;
+    }
+    .alert-success {
+      color: #155724;
+      background-color: #d4edda;
+      border-color: #c3e6cb;
+    }
+    .alert-danger {
+      color: #721c24;
+      background-color: #f8d7da;
+      border-color: #f5c6cb;
+    }
+
+    /* Estilos específicos para impresión térmica */
+    @media print {
+      body * {
+        visibility: hidden; /* Oculta todo */
+      }
+      #ticket, #ticket * {
+        visibility: visible; /* Muestra solo el ticket */
+      }
+      #ticket {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 58mm; /* Ancho estándar del ticket térmico */
+        font-size: 12px; /* Reducir tamaño de fuente */
+        margin: 0;
+        padding: 0;
+      }
+      #ticket h2 {
+        font-size: 16px; /* Título más grande */
+        text-align: center;
+      }
+      #ticket p {
+        margin: 2px 0; /* Reducir márgenes entre líneas */
+        text-align: left; /* Alinear texto a la izquierda */
+      }
+      button {
+        display: none; /* Oculta botones al imprimir */
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Tarjetas de Visitas</h1>
+
+  <!-- Paso 1: Ingreso del número -->
+  <div id="form-numero">
+    <form>
+      <label for="telefono">Número de Teléfono</label>
+      <input type="text" id="telefono" placeholder="+1234567890" required>
+      <button type="button" id="verificar-telefono">Continuar</button>
+    </form>
+  </div>
+
+  <!-- Paso 2: Registro del nuevo usuario -->
+  <div id="form-nuevo-usuario" class="hidden">
+    <form>
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" placeholder="Nombre del cliente" required>
+      
+      <label for="bebida">Selecciona una Bebida</label>
+      <select id="bebida" required>
+        <option value="" disabled selected>Elige una bebida</option>
+        <option value="Tapioca Black Milk Tea">Tapioca Black Milk Tea</option>
+        <option value="Black Tea">Black Tea</option>
+        <option value="Green Tea">Green Tea</option>
+        <option value="Oolong">Oolong</option>
+        <option value="Lichi Green Tea">Lichi Green Tea</option>
+        <option value="Lichi Oolong Tea">Lichi Oolong Tea</option>
+        <option value="Black Milk Tea">Black Milk Tea</option>
+        <option value="Green Milk Tea">Green Milk Tea</option>
+        <option value="Oolong Milk Tea">Oolong Milk Tea</option>
+        <option value="Matcha Milk">Matcha Milk</option>
+        <option value="Americano">Americano</option>
+        <option value="Milk Coffee">Milk Coffee</option>
+        <option value="Dolce Coffee Smoothie">Dolce Coffee Smoothie</option>
+        <option value="Durazno Black Tea Smoothie">Durazno Black Tea Smoothie</option>
+        <option value="Lichi Smoothie">Lichi Smoothie</option>
+        <option value="Brown Sugar Matcha">Brown Sugar Matcha</option>
+      </select>
+      
+      <button type="button" id="registrar-usuario">Registrar</button>
+    </form>
+  </div>
+
+  <!-- Información del cliente existente -->
+  <div id="info-cliente" class="hidden">
+    <p><strong>Nombre:</strong> <span id="nombre-cliente"></span></p>
+    <p><strong>Tarjeta Activa:</strong> <span id="tarjeta-activa"></span></p>
+    <p><strong>Visitas:</strong> <span id="visitas"></span></p>
+    <button type="button" id="regresar">Regresar</button>
+  </div>
+
+  <!-- Mensaje de error o éxito -->
+  <div id="resultado" class="alert hidden"></div>
+
+  <!-- Ticket -->
+  <div id="ticket" class="hidden">
+    <h2>Ticket</h2>
+    <p><strong>Nombre:</strong> <span id="ticket-nombre"></span></p>
+    <p><strong>Tarjeta Activa:</strong> <span id="ticket-bebida"></span></p>
+    <p><strong>Visitas:</strong> <span id="ticket-visitas"></span></p>
+    <p id="ticket-mensaje"></p>
+    <p><strong>Fecha:</strong> <span id="ticket-fecha"></span></p>
+    <p>¡Gracias por tu visita!</p>
+    <button id="imprimir-ticket">Imprimir Ticket</button>
+  </div>
+
+  <div id="opciones-completadas" class="hidden">
+    <p>Has completado una tarjeta.</p>
+    <button id="guardar-tarjeta">Guardar Tarjeta</button>
+    <button id="redimir-tarjeta">Redimir Tarjeta</button>
+  </div>
+  
+  <div id="tarjetas-guardadas" class="hidden">
+    <p>Tarjetas Guardadas:</p>
+    <select id="seleccionar-tarjeta">
+      <!-- Opciones dinámicas -->
+    </select>
+    <button id="usar-tarjeta">Usar esta tarjeta</button>
+  </div>
+
+  <!-- Script externo -->
+  <script src="script.js"></script>
+</body>
+</html>
