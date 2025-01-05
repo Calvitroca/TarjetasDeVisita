@@ -36,24 +36,27 @@
         visibility: visible; /* Muestra solo el ticket */
       }
       #ticket {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 58mm; /* Ancho estándar del ticket térmico */
-        font-size: 12px; /* Reducir tamaño de fuente */
+        position: relative;
+        width: 80mm; /* Ancho estándar del ticket térmico */
+        height: 50mm; /* Largo deseado */
+        font-size: 10px; /* Reducir tamaño de fuente */
+        line-height: 1.1; /* Reducir espacio entre líneas */
         margin: 0;
-        padding: 0;
+        padding: 5mm; /* Margen interno pequeño */
+        box-sizing: border-box;
+        border: 1px dashed #000; /* Añadir borde opcional */
       }
       #ticket h2 {
-        font-size: 16px; /* Título más grande */
+        font-size: 12px; /* Título compacto */
         text-align: center;
+        margin: 0 0 5px 0;
       }
       #ticket p {
         margin: 2px 0; /* Reducir márgenes entre líneas */
-        text-align: left; /* Alinear texto a la izquierda */
+        text-align: center; /* Centrar el texto */
       }
       button {
-        display: none; /* Oculta botones al imprimir */
+        display: none; /* Ocultar botones al imprimir */
       }
     }
   </style>
@@ -116,12 +119,10 @@
   <div id="ticket" class="hidden">
     <h2>Ticket</h2>
     <p><strong>Nombre:</strong> <span id="ticket-nombre"></span></p>
-    <p><strong>Tarjeta Activa:</strong> <span id="ticket-bebida"></span></p>
+    <p><strong>Bebida:</strong> <span id="ticket-bebida"></span></p>
     <p><strong>Visitas:</strong> <span id="ticket-visitas"></span></p>
-    <p id="ticket-mensaje"></p>
     <p><strong>Fecha:</strong> <span id="ticket-fecha"></span></p>
     <p>¡Gracias por tu visita!</p>
-    <button id="imprimir-ticket">Imprimir Ticket</button>
   </div>
 
   <div id="opciones-completadas" class="hidden">
