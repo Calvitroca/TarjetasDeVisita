@@ -27,14 +27,6 @@
       border-color: #f5c6cb;
     }
 
-    /* Aumentar el tamaño de las etiquetas */
-    label {
-      font-size: 18px; /* Tamaño de fuente más grande */
-      font-weight: bold;
-      display: block;
-      margin-bottom: 8px;
-    }
-
     /* Estilos específicos para impresión térmica */
     @media print {
       body * {
@@ -45,23 +37,23 @@
       }
       #ticket {
         position: relative;
-        width: 80mm; /* Ancho estándar del ticket térmico */
-        height: 50mm; /* Largo deseado */
-        font-size: 10px; /* Reducir tamaño de fuente */
-        line-height: 1.1; /* Reducir espacio entre líneas */
+        width: 80mm; /* Ancho estándar del ticket */
+        height: auto; /* Ajusta la altura automáticamente */
+        font-size: 14px; /* Incrementar tamaño */
+        line-height: 1.5; /* Incrementar espacio entre líneas */
         margin: 0;
         padding: 5mm; /* Margen interno pequeño */
         box-sizing: border-box;
         border: 1px dashed #000; /* Añadir borde opcional */
       }
       #ticket h2 {
-        font-size: 12px; /* Título compacto */
+        font-size: 16px; /* Incrementar tamaño de título */
         text-align: center;
         margin: 0 0 5px 0;
       }
       #ticket p {
-        margin: 2px 0; /* Reducir márgenes entre líneas */
-        text-align: center; /* Centrar el texto */
+        margin: 4px 0; /* Reducir márgenes entre líneas */
+        text-align: left; /* Cambiar alineación a izquierda */
       }
       button {
         display: none; /* Ocultar botones al imprimir */
@@ -131,6 +123,7 @@
     <p><strong>Visitas:</strong> <span id="ticket-visitas"></span></p>
     <p><strong>Fecha:</strong> <span id="ticket-fecha"></span></p>
     <p>¡Gracias por tu visita!</p>
+    <p style="text-align: center; font-size: 14px;">Test 1</p> <!-- Mensaje añadido -->
     <button id="imprimir-ticket">Imprimir Ticket</button>
   </div>
   
