@@ -37,23 +37,23 @@
       }
       #ticket {
         position: relative;
-        width: 80mm; /* Ancho estándar del ticket */
-        height: auto; /* Ajusta la altura automáticamente */
-        font-size: 20px; /* Incrementar tamaño */
-        line-height: 1.5; /* Incrementar espacio entre líneas */
-        margin: 0;
-        padding: 5mm; /* Margen interno pequeño */
+        width: 80mm; /* Ancho estándar del ticket térmico */
+        height: 50mm; /* Largo deseado */
+        font-size: 10px; /* Reducir tamaño de fuente */
+        line-height: 1.1; /* Reducir espacio entre líneas */
+        margin: 0; /* Sin margen externo */
+        padding: 0; /* Sin margen interno */
         box-sizing: border-box;
-        border: 1px dashed #000; /* Añadir borde opcional */
+        border: none; /* Sin borde opcional */
       }
       #ticket h2 {
-        font-size: 16px; /* Incrementar tamaño de título */
+        font-size: 12px; /* Título compacto */
         text-align: center;
-        margin: 0 0 5px 0;
+        margin: 0; /* Sin margen */
       }
       #ticket p {
-        margin: 4px 0; /* Reducir márgenes entre líneas */
-        text-align: left; /* Cambiar alineación a izquierda */
+        margin: 0; /* Sin margen */
+        text-align: center; /* Centrar el texto */
       }
       button {
         display: none; /* Ocultar botones al imprimir */
@@ -123,7 +123,7 @@
     <p><strong>Visitas:</strong> <span id="ticket-visitas"></span></p>
     <p><strong>Fecha:</strong> <span id="ticket-fecha"></span></p>
     <p>¡Gracias por tu visita!</p>
-    <p style="text-align: center; font-size: 14px;">Test 1</p> <!-- Mensaje añadido -->
+    <p>Test 1</p>
     <button id="imprimir-ticket">Imprimir Ticket</button>
   </div>
   
