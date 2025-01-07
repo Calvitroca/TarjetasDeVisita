@@ -27,6 +27,12 @@
       border-color: #f5c6cb;
     }
 
+    strong {
+      font-weight: bold; /* Mantiene negritas */
+      font-size: 14px; /* Tamaño de fuente más grande */
+      color: #000; /* Color negro para mayor contraste */
+    }
+
     /* Estilos específicos para impresión térmica */
     @media print {
       body * {
@@ -39,20 +45,20 @@
         position: relative;
         width: 80mm; /* Ancho estándar del ticket térmico */
         height: 50mm; /* Largo deseado */
-        font-size: 10px; /* Reducir tamaño de fuente */
-        line-height: 1.1; /* Reducir espacio entre líneas */
+        font-size: 20px; /* Tamaño más grande para mejor visibilidad */
+        line-height: 1.2; /* Espaciado entre líneas ajustado */
         margin: 0; /* Sin margen externo */
         padding: 0; /* Sin margen interno */
         box-sizing: border-box;
-        border: none; /* Sin borde opcional */
+        border: 1px dashed #000; /* Restaurar el borde cuadriculado */
       }
       #ticket h2 {
-        font-size: 12px; /* Título compacto */
+        font-size: 18px; /* Título más grande */
         text-align: center;
-        margin: 0; /* Sin margen */
+        margin: 5px 0; /* Margen pequeño arriba y abajo */
       }
       #ticket p {
-        margin: 0; /* Sin margen */
+        margin: 2px 0; /* Margen reducido */
         text-align: center; /* Centrar el texto */
       }
       button {
