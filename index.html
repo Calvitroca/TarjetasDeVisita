@@ -27,12 +27,6 @@
       border-color: #f5c6cb;
     }
 
-    strong {
-      font-weight: bold; /* Mantiene negritas */
-      font-size: 14px; /* Tamaño de fuente más grande */
-      color: #000; /* Color negro para mayor contraste */
-    }
-
     /* Estilos específicos para impresión térmica */
     @media print {
       body * {
@@ -43,23 +37,23 @@
       }
       #ticket {
         position: relative;
-        width: 80mm; /* Ancho estándar del ticket térmico */
-        height: 50mm; /* Largo deseado */
-        font-size: 20px; /* Tamaño más grande para mejor visibilidad */
-        line-height: 1.2; /* Espaciado entre líneas ajustado */
-        margin: 0; /* Sin margen externo */
-        padding: 0; /* Sin margen interno */
+        width: 80mm; /* Ancho estándar del ticket */
+        height: auto; /* Ajusta la altura automáticamente */
+        font-size: 20px; /* Incrementar tamaño */
+        line-height: 1.5; /* Incrementar espacio entre líneas */
+        margin: 0;
+        padding: 5mm; /* Margen interno pequeño */
         box-sizing: border-box;
-        border: 1px dashed #000; /* Restaurar el borde cuadriculado */
+        border: 1px dashed #000; /* Añadir borde opcional */
       }
       #ticket h2 {
-        font-size: 18px; /* Título más grande */
+        font-size: 16px; /* Incrementar tamaño de título */
         text-align: center;
-        margin: 5px 0; /* Margen pequeño arriba y abajo */
+        margin: 0 0 5px 0;
       }
       #ticket p {
-        margin: 2px 0; /* Margen reducido */
-        text-align: center; /* Centrar el texto */
+        margin: 4px 0; /* Reducir márgenes entre líneas */
+        text-align: left; /* Cambiar alineación a izquierda */
       }
       button {
         display: none; /* Ocultar botones al imprimir */
@@ -129,7 +123,7 @@
     <p><strong>Visitas:</strong> <span id="ticket-visitas"></span></p>
     <p><strong>Fecha:</strong> <span id="ticket-fecha"></span></p>
     <p>¡Gracias por tu visita!</p>
-    <p>Test 1</p>
+    <p style="text-align: center; font-size: 14px;">Test 1</p> <!-- Mensaje añadido -->
     <button id="imprimir-ticket">Imprimir Ticket</button>
   </div>
   
