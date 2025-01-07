@@ -41,10 +41,10 @@
         height: auto; /* Ajusta la altura automáticamente */
         font-size: 20px; /* Incrementar tamaño */
         line-height: 1.5; /* Incrementar espacio entre líneas */
-        margin: 0;
-        padding: 5mm; /* Margen interno pequeño */
-        box-sizing: border-box;
-        border: 1px dashed #000; /* Añadir borde opcional */
+        margin: 0; /* Eliminar márgenes externos */
+        padding: 0; /* Eliminar padding interno */
+        box-sizing: border-box; /* Asegura que padding y bordes estén dentro del ancho */
+        border: none; /* Elimina bordes si no son necesarios */
       }
       #ticket h2 {
         font-size: 16px; /* Incrementar tamaño de título */
@@ -123,7 +123,7 @@
     <p><strong>Visitas:</strong> <span id="ticket-visitas"></span></p>
     <p><strong>Fecha:</strong> <span id="ticket-fecha"></span></p>
     <p>¡Gracias por tu visita!</p>
-    <p style="text-align: center; font-size: 14px;">Test 1</p> <!-- Mensaje añadido -->
+    <p style="text-align: center; font-size: 14px;">Test 1</p>
     <button id="imprimir-ticket">Imprimir Ticket</button>
   </div>
   
